@@ -14,7 +14,6 @@ router.get('/products', async(req, res) => {
         const products=await Product.find({});
         res.render('products/index',{products}); 
     } catch (e) {
-        console.log("Something Went Wrong");
         req.flash('error', 'Cannot Find Products');
         res.render('error');
     }
@@ -52,7 +51,7 @@ router.get('/products/:id', async(req, res) => {
         res.render('products/show', { product});
     }
     catch (e) {
-        console.log(e.message);
+        
         req.flash('error', 'Cannot find this Product');
         res.redirect('/error');
     }
@@ -66,7 +65,7 @@ router.get('/products/:id/edit',isLoggedIn,async(req, res) => {
         res.render('products/edit',{product});
     }
     catch (e) {
-        console.log(e.message);
+        
         req.flash('error', 'Cannot Edit this Product');
         res.redirect('/error');
     }
@@ -81,7 +80,7 @@ router.patch('/products/:id',isLoggedIn,async(req, res) => {
         res.redirect(`/products/${req.params.id}`) 
     }
     catch (e) {
-        console.log(e.message);
+        
         req.flash('error', 'Cannot update this Product');
         res.redirect('/error');
     }
@@ -97,7 +96,7 @@ router.delete('/products/:id',isLoggedIn,async (req, res) => {
         res.redirect('/products');
     }
     catch (e) {
-        console.log(e.message);
+        
         req.flash('error', 'Cannot delete this Product');
         res.redirect('/error');
     }
@@ -128,7 +127,7 @@ router.post('/products/:id/review',isLoggedIn,async (req, res) => {
         res.redirect(`/products/${req.params.id}`);
     }
     catch (e) {
-        console.log(e.message);
+        
         req.flash('error', 'Cannot add review to this Product');
         res.redirect('/error');
     }

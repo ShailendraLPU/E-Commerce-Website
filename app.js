@@ -29,13 +29,7 @@ mongoose.connect(process.env.DB_URL,
         useFindAndModify:false,
         useCreateIndex:true
     })
-    .then(() => {
-        console.log("DB Connected");
-    })
-    .catch((err) => {
-        console.log("OH NO ERROR!!!");
-        console.log(err);
-    });
+    
 
 
 // seedDB();
