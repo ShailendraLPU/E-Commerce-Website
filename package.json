@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./app.js"
+    "start": "node app.js"
   },
-  "author": "sabeel khan",
+  "author": "Shailendra Srivastava",
   "license": "ISC",
   "dependencies": {
     "cloudinary": "^1.25.1",
